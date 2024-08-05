@@ -45,14 +45,52 @@ const celoDango = defineChain({
     testnet: true,
 })
 
+const metalL2Testnet = defineChain({
+    id: 1740,
+    name: "Metal L2 Testnet",
+    nativeCurrency: {name: "ETH", symbol: "ETH", decimals: 18},
+    blockExplorers: [
+        {
+            name: "Metal L2 Testnet Explorer",
+            url: "https://testnet.explorer.metall2.com",
+            apiUrl: "https://api.metall2.com/api"
+        },
+    ],
+    testnet: true,
+})
 
+const fraxtalTestnet = defineChain({
+    id: 2522,
+    name: "Fraxtal Testnet",
+    nativeCurrency: {name: "Frax Ether", symbol: "frxETH", decimals: 18},
+    blockExplorers: [
+        {
+            name: "Fraxscan",
+            url: "https://holesky.fraxscan.com",
+        },
+    ],
+    testnet: true,
+})
+
+const modeTestnet = defineChain({
+    id: 919,
+    name: "Mode Testnet",
+    nativeCurrency: {name: "Sepolia Ether", symbol: "ETH", decimals: 18},
+    blockExplorers: [
+        {
+            name: "Mode Sepolia Explorer",
+            url: "https://sepolia.explorer.mode.network"
+        },
+    ],
+    testnet: true,
+})
 
 export const SignIn = () => {
     return (
         <ConnectButton 
             client={client}
             wallets={wallets}
-            chains={[baseSepolia, optimismSepolia, celoAlfajores, celoDango]}
+            chains={[baseSepolia, optimismSepolia, celoAlfajores, celoDango, metalL2Testnet, fraxtalTestnet, modeTestnet]}
         />
 
     )
