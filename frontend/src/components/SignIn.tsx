@@ -90,7 +90,14 @@ export const SignIn = () => {
         <ConnectButton 
             client={client}
             wallets={wallets}
-            chains={[baseSepolia, optimismSepolia, celoAlfajores, celoDango, metalL2Testnet, fraxtalTestnet, modeTestnet]}
+            chains={[optimismSepolia, baseSepolia, celoAlfajores, metalL2Testnet, fraxtalTestnet, modeTestnet]}
+            accountAbstraction={
+                {
+                    chain: optimismSepolia,
+                    sponsorGas: true,
+                    // factoryAddress: "0xAde918BDd0BB917B8e41753D0142A71E144Ff764"
+                }
+            }
         />
 
     )
