@@ -16,6 +16,35 @@ const wallets = [
     })
 ]
 
+const celoAlfajores = defineChain({
+    id: 44787,
+    name: "Celo Alfajores",
+    nativeCurrency: { name: "CELO", symbol: "CELO", decimals: 18 },
+    blockExplorers: [
+        {
+            name: "Alfajoresscan",
+            url: "https://alfajores.celoscan.io",
+            apiUrl: "https://api-alfajores.celoscan.io/api" 
+        },
+    ],
+    testnet: true,
+})
+
+const celoDango = defineChain({
+    id: 44787,
+    rpc: "https://forno.dango.celo-testnet.org/",
+    name: "Celo Dango",
+    nativeCurrency: { name: "CELO", symbol: "CELO", decimals: 18 },
+    blockExplorers: [
+        {
+            name: "Dangoscan",
+            url: "https://celo-dango.blockscout.com",
+            apiUrl: "https://api.dango.celo.org/api"
+        },
+    ],
+    testnet: true,
+})
+
 
 
 export const SignIn = () => {
@@ -23,7 +52,7 @@ export const SignIn = () => {
         <ConnectButton 
             client={client}
             wallets={wallets}
-            chains={[baseSepolia, optimismSepolia]}
+            chains={[baseSepolia, optimismSepolia, celoAlfajores, celoDango]}
         />
 
     )
