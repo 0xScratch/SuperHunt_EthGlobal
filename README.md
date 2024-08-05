@@ -1,1 +1,1 @@
-"# SuperHunt_EthGlobal" 
+# SuperHunt_EthGlobal
