@@ -4,7 +4,7 @@ import { client } from "@/app/client"
 import { baseSepolia, optimismSepolia } from "thirdweb/chains"
 import { ConnectButton } from "thirdweb/react"
 import { inAppWallet } from "thirdweb/wallets"
-import { defineChain } from "thirdweb/chains"
+// import { defineChain } from "thirdweb/chains"
 import {
     celoAlfajores,
     metalL2Testnet,
@@ -36,6 +36,7 @@ export const SignIn = () => {
                     
                 }
             }
+  
         />
 
     )
