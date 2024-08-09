@@ -119,8 +119,8 @@ contract SuperHuntOP {
         return bounties[bountyId]; // Return the bounty details
     }
 
-    // Function to retrieve the chain ID
-    function getChainID() external pure returns (uint256) {
-        return CHAIN_ID;
-    }
+    // // Function to retrieve the chain ID
+    // function getChainID() external pure returns (uint256) {
+    //     return CHAIN_ID;
+    // }
 }
