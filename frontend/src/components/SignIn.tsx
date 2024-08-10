@@ -28,14 +28,14 @@ export const SignIn = () => {
             client={client}
             wallets={wallets}
             chains={[optimismSepolia, baseSepolia, celoAlfajores, metalL2Testnet, fraxtalTestnet, modeTestnet]}
-            // accountAbstraction={
-            //     {
-            //         chain: optimismSepolia,
-            //         sponsorGas: true,
-            //         // factoryAddress: "0xAde918BDd0BB917B8e41753D0142A71E144Ff764"
+            accountAbstraction={
+                {
+                    chain: optimismSepolia,
+                    sponsorGas: true,
+                    // factoryAddress: "0xAde918BDd0BB917B8e41753D0142A71E144Ff764"
                     
-            //     }
-            // }
+                }
+            }
   
         />
 
