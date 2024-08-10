@@ -108,7 +108,11 @@ contract SuperHuntOP {
 
         // Refund amount to the creator
         uint256 refundAmount = bounty.balance;
-        bounty.amount = 0; // Set amount to zero to prevent re-entrancy
+
+        // Ensure contract balance is sufficient for refund
+        require(address(this).balance >= refundAmount, "Contract balance is insufficient");
+
+        bounty.balance = 0; // Set balance to zero to prevent re-entrancy
         payable(bounty.creator).transfer(refundAmount); // Refund the bounty amount
 
         emit BountyCancelled(bountyId, msg.sender); // Emit cancellation event
