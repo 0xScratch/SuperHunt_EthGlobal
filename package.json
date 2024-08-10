@@ -17,6 +17,7 @@
 		"typechain": "^8.3.0"
 	},
 	"dependencies": {
+		"@ethereum-attestation-service/eas-contracts": "^1.7.1",
 		"@pythnetwork/pyth-sdk-solidity": "^4.0.0"
 	}
 }

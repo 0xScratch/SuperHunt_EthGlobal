@@ -63,7 +63,7 @@ contract SuperHuntOP {
         pyth.updatePriceFeeds{value: updateFee}(updateData);
 
         // Get the current ETH price
-        PythStructs.Price memory currentEthPrice = pyth.getPrice(ethUsdPriceId);
+        PythStructs.Price memory currentEthPrice = pyth.getPriceNoOlderThan(ethUsdPriceId, 60);
 
         // Initializing the amount in wei
         uint amountInWei;
@@ -83,7 +83,7 @@ contract SuperHuntOP {
         // Create and store the bounty
         bounties[bountyCounter] = Bounty({
             id: bountyCounter,
-            amount: _amountInDollars,
+            amountInDollars: _amountInDollars,
             balance: amountInWei,
             title: _title,
             description: _description,
