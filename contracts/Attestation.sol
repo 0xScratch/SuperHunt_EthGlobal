@@ -20,7 +20,7 @@ contract Attestation {
         _eas = eas;
     }
 
-    function attestUint(
+    function attestRepo(
         string memory Encrypted_GitHub_Repo,
         string memory Latest_Commit_Hash,
         string memory Demo_URL,
