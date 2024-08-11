@@ -11,7 +11,7 @@ contract ID {
 	error DuplicateNullifier(uint256 nullifierHash);
 
 	/// @dev The World ID instance that will be used for verifying proofs
-	IWorldID internal immutable worldId;
+	IWorldID internal immutable worldId = IWorldID(0x11cA3127182f7583EfC416a8771BD4d11Fae4334);
 
 	/// @dev The contract's external nullifier hash
 	uint256 internal immutable externalNullifier;
@@ -29,11 +29,9 @@ contract ID {
 	/// @dev A placeholder event that is emitted when a user successfully verifies with World ID
 	event Verified(uint256 nullifierHash);
 
-	/// @param _worldId The WorldID router that will verify the proofs
 	/// @param _appId The World ID app ID
 	/// @param _actionId The World ID action ID
-	constructor(IWorldID _worldId, string memory _appId, string memory _actionId) {
-		worldId = _worldId;
+	constructor(string memory _appId, string memory _actionId) {
 		externalNullifier = abi.encodePacked(abi.encodePacked(_appId).hashToField(), _actionId).hashToField();
 	}
 
