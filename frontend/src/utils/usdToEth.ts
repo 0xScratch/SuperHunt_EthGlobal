@@ -25,7 +25,7 @@ const getEthPriceInUsd = async (): Promise<number> => {
   }
 };
 
-const convertUsdToEth = async (usdAmount: number): Promise<number> => {
+export const convertUsdToEth = async (usdAmount: number): Promise<number> => {
   try {
     const ethPriceInUsd = await getEthPriceInUsd();
     const ethAmount = usdAmount / ethPriceInUsd;
@@ -36,9 +36,9 @@ const convertUsdToEth = async (usdAmount: number): Promise<number> => {
   }
 };
 
-// Example usage
-convertUsdToEth(100.56).then(ethAmount => {
-  console.log(`$100.56 is approximately ${ethAmount} ETH`);
-}).catch(err => {
-  console.error('Error converting USD to ETH:', err);
-});
+// // Example usage
+// convertUsdToEth(100.56).then(ethAmount => {
+//   console.log(`$100.56 is approximately ${ethAmount} ETH`);
+// }).catch(err => {
+//   console.error('Error converting USD to ETH:', err);
+// });
