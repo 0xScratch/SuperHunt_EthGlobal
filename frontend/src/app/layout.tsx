@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#f1f4f9]">
+      <body className="bg-white">
         <ThirdwebProvider>
           <NavBar />
           {children}

@@ -19,6 +19,9 @@ contract ID {
 	/// @dev The World ID group ID (always 1)
 	uint256 internal immutable groupId = 1;
 
+	/// @dev The contract owner
+	address public owner;
+
 	/// @dev Whether a nullifier hash has been used already. Used to guarantee an action is only performed once by a single person
 	mapping(uint256 => bool) internal nullifierHashes;
 
@@ -33,6 +36,7 @@ contract ID {
 	/// @param _actionId The World ID action ID
 	constructor(string memory _appId, string memory _actionId) {
 		externalNullifier = abi.encodePacked(abi.encodePacked(_appId).hashToField(), _actionId).hashToField();
+		owner = msg.sender;
 	}
 
 	/// @param signal An arbitrary input from the user, usually the user's wallet address (check README for further details)
@@ -62,5 +66,10 @@ contract ID {
 
         // Finally, we emit an event to signal the user has been verified
 		emit Verified(nullifierHash);
+	}
+
+	function manualVerify(address _currentUser) public {
+		require(msg.sender == owner, "Only the owner can manually verify users");
+		isWorldIDverified[_currentUser] = true;
 	}
 }
