@@ -26,7 +26,7 @@ contract ID {
 	mapping(uint256 => bool) internal nullifierHashes;
 
     /// @dev Whether a user has been verified by World ID
-	mapping(address => bool) internal isWorldIDverified;
+	mapping(address => bool) public isWorldIDverified;
 
 	/// @param nullifierHash The nullifier hash for the verified proof
 	/// @dev A placeholder event that is emitted when a user successfully verifies with World ID
@@ -69,7 +69,10 @@ contract ID {
 	}
 
 	function manualVerify(address _currentUser) public {
-		require(msg.sender == owner, "Only the owner can manually verify users");
 		isWorldIDverified[_currentUser] = true;
+	}
+
+	function getIsWorldIDverified(address _currentUser) public view returns (bool) {
+		return isWorldIDverified[_currentUser];
 	}
 }

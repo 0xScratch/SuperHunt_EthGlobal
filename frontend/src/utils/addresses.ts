@@ -1,7 +1,7 @@
 export const addresses = {
     "11155420": {
-        "AttestContract": "0x30bD40bEE352eCba1945CF989CDe23B75878aA8d",
-        "ID": "0x3f68760B1CF71E4C80d8A14f7F5762B2438D1FED",
-        "SuperHunt": "0x6c3DD0786E5E748f1A051d9859da9160Ac4CC232"
+        "AttestContract": "0x4fa265fB6b8BFdd827A99eF8E47f624ea472863b",
+        "ID": "0x8ABfFEd28c4D617c130fc7863498b6971B664cd9",
+        "SuperHunt": "0x1cba9eD95446e1d81dfd151411860B75d62dE10F"
     }
 }
